@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk app_compileSdkVersion
+
+    defaultConfig {
+        applicationId app_applicationId
+        minSdkVersion app_minSdkVersion
+        targetSdkVersion app_compileSdkVersion
+        versionCode app_versionCode
+        versionName app_versionName
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ":core")
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "junit:junit:$junit_version"
+}
