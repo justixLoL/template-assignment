@@ -2,7 +2,7 @@ package org.kolodyazhni.assignment
 
 import android.app.Application
 import org.kolodyazhni.assignment.di.AppComponent
-import org.kolodyazhni.assignment.di.AppModule
+import org.kolodyazhni.assignment.di.DaggerAppComponent
 
 class AssignmentApplication : Application(){
 
@@ -10,7 +10,7 @@ class AssignmentApplication : Application(){
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.builder().appModule(AppModule()).build()
+        appComponent = DaggerAppComponent.create()
     }
 
 }

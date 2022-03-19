@@ -20,6 +20,10 @@ android {
 }
 
 dependencies {
+    api "androidx.appcompat:appcompat:$appcompat_version"
+    api "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    api "com.google.android.material:material:$material_version"
+
     api "io.reactivex.rxjava2:rxandroid:$rxjava_android_version"
     api "io.reactivex.rxjava2:rxjava:$rxjava_version"
 
