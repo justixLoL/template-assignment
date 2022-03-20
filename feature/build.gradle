@@ -1,14 +1,13 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
 }
 
 android {
-    compileSdk app_compileSdkVersion
+    compileSdkVersion app_compileSdkVersion
 
     defaultConfig {
-        applicationId app_applicationId
         minSdkVersion app_minSdkVersion
         targetSdkVersion app_compileSdkVersion
         versionCode app_versionCode
@@ -18,21 +17,11 @@ android {
     buildFeatures {
         viewBinding true
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
 }
 
 dependencies {
     implementation project(path: ":core")
-    implementation project(path: ':feature')
 
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-
-    testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "junit:junit:$junit_version"
 }

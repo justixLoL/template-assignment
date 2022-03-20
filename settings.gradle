@@ -9,3 +9,4 @@ pluginManagement {
 rootProject.name = "assignment"
 include ':app'
 include ':core'
+include ':feature'

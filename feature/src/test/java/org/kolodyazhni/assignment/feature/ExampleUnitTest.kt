@@ -1,4 +1,4 @@
-package org.kolodyazhni.assignment
+package org.kolodyazhni.assignment.feature
 
 import org.junit.Test
 
